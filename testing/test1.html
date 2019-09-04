@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let person = {
+        name: {
+            first: 'Bob',
+            last: 'Smith'
+        },
+        age: 32,
+        gender: 'male',
+        interests: ['music', 'skiing'],
+        bio: function () {
+            alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        },
+        greeting: function () {
+            alert('Hi! I\'m ' + this.name.first + '.');
+        }
+    };
+
+    person.age = 45;
+    person['name']['last'] = 'Simon';
+    person.bio();
+    person.name.first;
+    person['name']['first'];
+    person.greeting();
+
+    person.farewell = function () {
+        alert("Bye Everybody!");
+    }
+    person.farewell();
+
+    let myDataName = nameInput.value;
+    let myDataValue = nameValue.value;
+
+    person[myDataName] = myDataValue;
+
+    let myDataName = 'height';
+    let myDataValue = '1.75m';
+    person[myDataName] = myDataValue;
+
+    console.log(person.height);
+// using prototype
+    function Apple(type) {
+        this.type = type;
+        this.color = 'red';
+    }
+
+    Apple.prototype.getInfo = function () {
+        return this.color + '' + this.type + ' apple';
+    };
+
+</script>
+</html>
