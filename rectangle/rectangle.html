@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
+<fieldset>
+    <legend>Rectangle</legend>
+    <p id="txt">Length: </p>
+    <p id="txt1">Width:</p>
+    <p id ='txt2'>Area: </p>
+    <p id ='txt3'>Perimeter: </p>
+</fieldset>
+
+</body>
+    <script>
+        let lengthGuess = parseInt(prompt("Enter the length of the rectangle: "));
+        let widthGuess = parseInt(prompt("Enter the width of the rectangle: "));
+        let Rectangle = function (length, width) {
+            this.length = length;
+            this.width= width;
+            this.getLength = function () {
+                return length;
+            }
+            this.getWidth = function () {
+                return width;
+            }
+            this.getArea = function () {
+                return length * width;
+            }
+            this.getPerimeter = function () {
+                return (length + width) * 2
+            }
+        };
+
+        let rectangle = new Rectangle(lengthGuess,widthGuess);
+        let length = rectangle.getLength();
+        let width = rectangle.getWidth();
+        let area = rectangle.getArea();
+        let perimeter = rectangle.getPerimeter();
+        alert(length + ' ' + width +' '+  area + ' '+  perimeter);
+
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.rect(100,50,width,length);
+        ctx.stroke();
+
+        document.getElementById("txt").innerHTML = length;
+        document.getElementById("txt1").innerHTML = width;
+        document.getElementById("txt2").innerHTML = area;
+        document.getElementById("txt3").innerHTML = perimeter;
+
+    </script>
+</html>
