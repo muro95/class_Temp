@@ -20,7 +20,7 @@
         let widthGuess = parseInt(prompt("Enter the width of the rectangle: "));
         let Rectangle = function (length, width) {
             this.length = length;
-            this.width= width;
+            this.width = width;
             this.getLength = function () {
                 return length;
             }
@@ -45,7 +45,7 @@
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
         ctx.beginPath();
-        ctx.rect(100,50,width,length);
+        ctx.rect(50,25,width,length);
         ctx.stroke();
 
         document.getElementById("txt").innerHTML = length;

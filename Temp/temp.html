@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temp</title>
+</head>
+<body>
+
+</body>
+<script>
+    let cel = parseInt(prompt("Please enter your current Temp in Celsius: "))
+    let Temp = function (cel) {
+        this.cel = cel;
+
+        this.getFe = function () {
+            return cel * (9 / 5) + 32;
+        }
+
+        this.getKelvin = function () {
+            return cel + 273.15;
+        }
+        //
+        // this.setC = function () {
+        //     this.tempC = Cel;
+        // }
+        // this.setF = function () {
+        //     this.temF = Fe;
+        // }
+        // this.setK = function () {
+        //     this.temK = K;
+        // }
+    };
+
+    let a = new Temp(cel);
+    var tempF = a.getFe(cel);
+    let tempK = temp.getKelvin();
+    alert(tempF + tempK);
+</script>
+</html>

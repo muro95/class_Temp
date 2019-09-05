@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Temperature_conversation {
+
+        constructor(celsius) {
+
+            this.celsius= celsius;
+            this.fahrenheit= 0;
+            this.table_begin= -50.0;
+            this.table_end= 50.0;
+            this.table_step= 10.0;
+            console.log('---------------------Conversion--------------------------');
+            console.log('Celsius fahrenheit');
+            for(this.celsius = this.table_begin; this.celsius <= this.table_end; this.celsius += this.table_step){
+                this.fahrenheit = this.celsiusToFahrenhit(celsius);
+            }
+
+
+        }
+        celsiusToFahrenhit(c){
+            const minimun_celsius = -273.15;
+            if (c < minimun_celsius) {
+                throw 'O argumento es pequeno';
+
+            }
+            this.celsius = (9.0 / 5.0) * c+ 32;
+
+            var res = [this.celsius, this.fahrenheit]
+            console.table(res);
+        }
+    };
+</script>
+</html>

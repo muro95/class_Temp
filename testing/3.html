@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let cel = parseInt(prompt("Please enter your current Temp in Celsius: "))
+    let Temp = function (cel) {
+        this.cel = cel;
+        const minimun_celsius = -273.15;
+
+        this.getC = function () {
+            return cel;
+        }
+
+        this.getFe = function () {
+            if (cel < minimun_celsius) {
+                alert('O argumento o');
+            }
+            return cel * (9 / 5) + 32;
+        }
+
+        this.getKelvin = function () {
+            return cel + 273.15;
+        }
+        //
+        // this.setC = function () {
+        //     this.tempC = Cel;
+        // }
+        // this.setF = function () {
+        //     this.temF = Fe;
+        // }
+        // this.setK = function () {
+        //     this.temK = K;
+        // }
+    };
+
+    let temp = new Temp(cel);
+    var tempF = temp.getFe();
+    let tempK = temp.getKelvin();
+    alert(tempF +"  " + tempK);
+</script>
+</html>

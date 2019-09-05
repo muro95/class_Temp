@@ -33,11 +33,17 @@
         this.setYear = function(year) {
             this.year  = year;
         }
+        this.setDate = function(day, month, year){
+            this.day = day;
+            this.month = month;
+            this.year = year
+        }
+        this.toString = function () {
+            return this.day + '/' + this.month +'/' + this.year;
+        }
 
     };
-    let setDate1 = function(){
 
-    }
     //return day, month, year
 
 
@@ -45,14 +51,15 @@
     date.setDay(10);
     date.setMonth(10);
     date.setYear(2019);
-    date.setDate();
+
+
     let day = date.getDay(); // 2
 
     let month = date.getMonth(); // 2
 
     let year = date.getYear();
-    alert(setDate1());
-
+    date.setDate(3,3,3);
+    alert(date.toString());
 
 
 </script>
